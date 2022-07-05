@@ -7,23 +7,39 @@ namespace FileIO
     {
         public static void FileExist()
         {
-            string InputFile = @"C:\Users\kalpak\Desktop\Project.txt";
+            string InputFile = @"C:\Users\kalpak\Documents\Adobe";
             if (File.Exists(InputFile))
             {
                 Console.WriteLine("File Exist");
             }
             else
             {
-                Console.WriteLine("Not Exist");
+                Console.WriteLine("not Exist");
             }
         }
-
+        public static void ReadFile()
+        {
+            string InputFile = @"C:\Users\kalpak\Documents\Adobe";
+            using (StreamReader read = new StreamReader(InputFile))
+            {
+                string s = "";
+                while ((s = read.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+                read.Close();
+            }
+            
+        }
         public static void Main(string[] args)
         {
 
 
             FileExist();
+            ReadFile();
 
+           
         }
+        
     }
 }
