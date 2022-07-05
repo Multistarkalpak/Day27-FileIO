@@ -62,6 +62,20 @@ namespace FileIO
             }
             Console.ReadKey();
         }
+
+        public static void ReadStreamReader()
+        {
+            String path = @"G:\visualstudio\FileIOTextFile\FileIO.txt";
+            using (StreamReader read = File.OpenText(path))
+            {
+                String s = "";
+                while ((s = read.ReadLine()) != null)
+                {
+                    Console.WriteLine(s);
+                }
+            }
+            Console.ReadKey();//it will wait for a key press
+        }
         public static void Main(string[] args)
         {
 
@@ -72,7 +86,9 @@ namespace FileIO
             DeleteFile();
             ReadAllText();
             WriteUsingStreamWriter();
-            
+            ReadStreamReader();
+
+
 
         }
     }
