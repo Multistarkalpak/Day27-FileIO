@@ -29,7 +29,13 @@ namespace FileIO
                 }
                 read.Close();
             }
-            
+
+        }
+        public static void CopyFile()
+        {
+            string path = @"C:\Users\kalpak\Documents\Adobe";
+            string CopyPath = @"C:\Users\kalpak\Documents\Adobe";
+            File.Copy(path, CopyPath);
         }
         public static void Main(string[] args)
         {
@@ -37,9 +43,8 @@ namespace FileIO
 
             FileExist();
             ReadFile();
+            CopyFile();
 
-           
         }
-        
     }
 }
