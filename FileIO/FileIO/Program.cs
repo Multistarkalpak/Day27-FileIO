@@ -43,6 +43,14 @@ namespace FileIO
             File.Delete(Path);
             Console.WriteLine("File deleted sucessfully");
         }
+        public static void ReadAllText()
+        {
+            String path = @"C:\Users\kalpak\Documents\Adobe";
+            string lines;
+            lines = File.ReadAllText(path);
+            Console.WriteLine(lines);
+            Console.ReadKey();
+        }
         public static void Main(string[] args)
         {
 
@@ -51,6 +59,8 @@ namespace FileIO
             ReadFile();
             CopyFile();
             DeleteFile();
+            ReadAllText();
+
         }
     }
 }
