@@ -51,6 +51,17 @@ namespace FileIO
             Console.WriteLine(lines);
             Console.ReadKey();
         }
+        public static void WriteUsingStreamWriter()
+        {
+            string path = @"C:\Users\kalpak\Documents\Adobe";
+            using (StreamWriter sr = File.AppendText(path))
+            {
+                sr.WriteLine("Hello world.net class");
+                sr.Close();
+                Console.WriteLine(File.ReadAllText(path));
+            }
+            Console.ReadKey();
+        }
         public static void Main(string[] args)
         {
 
@@ -60,6 +71,8 @@ namespace FileIO
             CopyFile();
             DeleteFile();
             ReadAllText();
+            WriteUsingStreamWriter();
+            
 
         }
     }
