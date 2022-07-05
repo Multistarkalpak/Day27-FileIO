@@ -37,6 +37,12 @@ namespace FileIO
             string CopyPath = @"C:\Users\kalpak\Documents\Adobe";
             File.Copy(path, CopyPath);
         }
+        public static void DeleteFile()
+        {
+            string Path = @"C:\Users\kalpak\Documents\Adobe";
+            File.Delete(Path);
+            Console.WriteLine("File deleted sucessfully");
+        }
         public static void Main(string[] args)
         {
 
@@ -44,7 +50,7 @@ namespace FileIO
             FileExist();
             ReadFile();
             CopyFile();
-
+            DeleteFile();
         }
     }
 }
